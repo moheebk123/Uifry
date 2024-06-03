@@ -1,0 +1,89 @@
+nav {
+  padding-inline: 1em;
+  margin-left: 5px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > button {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  & > img {
+    height: 30px;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  & .menu-box {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+
+    & .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      cursor: pointer;
+
+      & span {
+        font-size: 8px;
+        position: absolute;
+        top: 10px;
+        right: -8px;
+      }
+    }
+
+    & .link-box {
+      display: flex;
+      gap: 1em;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+      }
+
+      & a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        transition: 0.3s ease;
+
+        &.navHome {
+          color: #ff0000;
+          font-weight: 600;
+        }
+
+        &::before {
+          content: "";
+          width: 0px;
+          height: 3px;
+          border-radius: 15px;
+          position: absolute;
+          bottom: -5px;
+          transition: 0.3s ease;
+        }
+
+        &:hover {
+          color: #ff0000;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            width: 100%;
+            background-color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+}

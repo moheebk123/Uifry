@@ -1,0 +1,10 @@
+.sub-heading-box {
+  margin-top: 1em;
+
+  .sub-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1em;
+  }
+}

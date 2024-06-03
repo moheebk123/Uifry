@@ -1,0 +1,84 @@
+#root {
+  width: 100vw;
+  height: max-content;
+  position: relative;
+  padding: 1em;
+  padding-top: 0;
+
+  @media screen and (min-width: 768px) {
+    max-width: 1200px;
+  }
+
+  & :is(nav, header, section, footer) {
+    width: 100%;
+    max-width: 1200px;
+
+    &:is(section) {
+      margin-block: 10em;
+    }
+  }
+
+  & section:is(.feature, .advantage) {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    align-items: center;
+
+    &:is(:nth-of-type(1), :nth-of-type(3)) {
+      flex-direction: column-reverse;
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+
+      &:is(:nth-of-type(1), :nth-of-type(3)) {
+        flex-direction: row;
+      }
+
+      & :is(.image-box, .content) {
+        width: 50%;
+      }
+    }
+
+    & .image-box {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2em;
+
+      & img {
+        width: 70%;
+
+        &.phone {
+          width: 100%;
+          position: absolute;
+          z-index: 5;
+        }
+      }
+    }
+
+    & .content {
+      width: 100%;
+
+      & :is(.section-name, .section-heading) {
+        text-align: center;
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+          text-align: left;
+          width: 380px;
+        }
+      }
+    }
+
+    &.feature .section-sub-heading {
+      font-size: 1.1em;
+    }
+
+    &.advantage .section-sub-heading {
+      font-size: 1.6em;
+    }
+  }
+}

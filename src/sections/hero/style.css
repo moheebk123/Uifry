@@ -1,0 +1,189 @@
+header {
+  margin-block: 3em;
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3em;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+
+    & :is(.content-box, .image-box) {
+      width: 50%;
+    }
+  }
+
+  & .content-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+
+    & .background {
+      top: -100px;
+      left: 25%;
+      position: absolute;
+      z-index: -1;
+      height: 250px;
+    }
+
+    & h1 {
+      font-weight: 900;
+      line-height: 50px;
+      text-align: center;
+      font-size: 2em;
+
+      @media screen and (min-width: 1024px) {
+        text-align: left;
+        font-size: 3em;
+      }
+    }
+
+    & .detail {
+      text-align: center;
+
+      @media screen and (min-width: 1024px) {
+        text-align: left;
+      }
+    }
+
+    & .button-box {
+      margin-block: 1em;
+      margin-inline: auto;
+      display: flex;
+      gap: 1em;
+
+      @media screen and (min-width: 1024px) {
+        margin-inline: 0;
+      }
+
+      & .watch-btn {
+        background-color: #f6f6f6;
+        color: #000;
+      }
+    }
+
+    & .ribbon-container {
+      position: relative;
+      height: 350px;
+      margin-block: 3em 5em;
+      display: none;
+
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
+
+      & .black-ribbon {
+        width: 600px;
+        height: 80px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        transform: rotate(-25deg);
+        position: absolute;
+        top: 125px;
+        left: -9%;
+        z-index: 5;
+        -webkit-transform: rotate(-25deg);
+        -moz-transform: rotate(-25deg);
+        -ms-transform: rotate(-25deg);
+        -o-transform: rotate(-25deg);
+      }
+
+      & .rounded-red-ribbon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        height: 80px;
+        background-color: #ff0000;
+        clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+        font-weight: 600;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 143px;
+        right: -2%;
+        z-index: 4;
+      }
+
+      & .red-ribbon {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 10px;
+        padding-left: 2em;
+        width: 350px;
+        height: 80px;
+        background-color: #ff0000;
+        position: absolute;
+        right: -40px;
+        bottom: 2px;
+        z-index: 3;
+        animation: redRibbon 2s ease;
+
+        &img {
+          border-inline: 2px solid;
+          padding-inline: 1em;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  & .image-box {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+
+    & img {
+      &.background {
+        height: 450px;
+      }
+
+      &.circle-layer {
+        height: 450px;
+        top: -100px;
+        left: 15%;
+        position: absolute;
+      }
+
+      &.phone {
+        height: 530px;
+        position: absolute;
+
+        &.phone-one {
+          z-index: 8;
+          top: -110px;
+          right: 20%;
+        }
+
+        &.phone-two {
+          z-index: 7;
+          top: -65px;
+          right: 5%;
+        }
+
+        &.phone-three {
+          z-index: 6;
+          top: -15px;
+          right: -10%;
+        }
+      }
+    }
+  }
+}
